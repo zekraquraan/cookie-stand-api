@@ -29,7 +29,7 @@ env = environ.Env(
     DATABASE_PASSWORD=(str, ""),
     DATABASE_HOST=(str, ""),
     DATABASE_PORT=(int, 5432),
-    SECRET_KEY=(str,"")
+    SECRET_KEY=(str,""),
 )
 
 environ.Env.read_env()
@@ -62,7 +62,7 @@ INSTALLED_APPS = [
     "corsheaders",
     # local
     "accounts",
-    "books",
+    "cookie_stands",
 ]
 
 MIDDLEWARE = [
@@ -109,7 +109,7 @@ DATABASES = {
         "USER": env.str("DATABASE_USER"),
         "PASSWORD": env.str("DATABASE_PASSWORD"),
         "HOST": env.str("DATABASE_HOST"),
-        "PORT": env.int("DATABASE_PORT",default=5432),
+        "PORT": env.int("DATABASE_PORT"),
     }
 }
 
